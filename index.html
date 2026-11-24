@@ -2019,15 +2019,6 @@ function render(){
     ordered = [];
     DIST_ORDER.forEach(function(d){ visible.forEach(function(p){ if(p.district===d){ ordered.push(p); districtCounts[d]=(districtCounts[d]||0)+1; } }); });
     visible.forEach(function(p){ if(DIST_ORDER.indexOf(p.district)===-1){ ordered.push(p); districtCounts[p.district]=(districtCounts[p.district]||0)+1; } });
-    var sig = currentFilterSig();
-    if(sig !== lastAutoSig){
-      lastAutoSig = sig;
-      var autoExpand = hasActiveSearchOrFilter();
-      openDistricts = {};
-      if(autoExpand){
-        Object.keys(districtCounts).forEach(function(d){ openDistricts[d] = true; });
-      }
-    }
   }
   var lastDistrict = null;
   var activeContainer = listEl;
