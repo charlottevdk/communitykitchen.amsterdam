@@ -804,7 +804,7 @@ h1 em{
 }
 .place-popup .leaflet-popup-content{
   margin:16px 18px;font-family:"Archivo",system-ui,sans-serif;line-height:1.48;
-  min-width:0;max-width:min(310px,calc(100vw - 72px));overflow-wrap:break-word;
+  min-width:0;max-width:min(424px,calc(100vw - 72px));overflow-wrap:break-word;
 }
 .place-popup .leaflet-popup-tip{background:#FFFFFF;border:1px solid var(--cream)}
 .pp-top{display:flex;align-items:center;justify-content:space-between;gap:8px;padding-right:26px;margin-bottom:4px}
@@ -870,7 +870,7 @@ footer a{color:#FFFFFF;font-weight:700;text-underline-offset:3px}
   -webkit-tap-highlight-color:transparent;touch-action:manipulation;
 }
 .p-stop:last-child{border-right:0}
-.p-stop.passed{background:var(--accent-tint);color:var(--accent)}
+.p-stop.passed{background:transparent;color:var(--ink)}
 .p-stop.sel{background:var(--accent);color:#FFFFFF}
 .price-ticks{display:flex;max-width:560px;margin-top:3px}
 .price-ticks span{flex:1 1 0;display:flex;justify-content:center}
@@ -2335,10 +2335,9 @@ function openHoverPopup(i){
   cancelPopupClose();
   var isNarrow = window.innerWidth < 768;
   var popupOpts = {
-    closeButton:true, autoPan:true, offset:[0,-28], className:'place-popup',
-    maxWidth: isNarrow ? Math.max(240, window.innerWidth - 32) : 310,
-    autoPanPaddingTopLeft: L.point(16,16),
-    autoPanPaddingBottomRight: L.point(16, isNarrow ? 104 : 24)
+    closeButton:true, autoPan:false, offset:[0,-28], className:'place-popup',
+    minWidth: isNarrow ? Math.max(240, window.innerWidth - 24) : 320,
+    maxWidth: isNarrow ? Math.max(240, window.innerWidth - 24) : 440
   };
   if(!hoverPopup){
     hoverPopup = L.popup(popupOpts);
@@ -2459,7 +2458,6 @@ function mountMapForCurrent(){
         var el = e.popup && e.popup.getElement ? e.popup.getElement() : null;
         if(el){
           el.addEventListener('mouseenter', cancelPopupClose);
-          el.addEventListener('mouseleave', schedulePopupClose);
         }
       });
       L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}', {
@@ -2520,8 +2518,6 @@ function mountMapForCurrent(){
     currentPlaces.forEach(function(cp, i){
       var isFree = cp.place && cp.place.priceKey === 'free';
       var mk = L.marker([cp.lat, cp.lng], {icon: pinIcon(i + 1, i === selectedIdx, isFree), title: cp.label}).addTo(markerLayer);
-      mk.on('mouseover', function(){ if(Date.now() < suppressHoverUntil) return; openHoverPopup(i); });
-      mk.on('mouseout', function(){ schedulePopupClose(); });
       mk.on('click', function(){
         var opened = selectPlace(i, true, false);
         if(opened){ openHoverPopup(i); }
@@ -2939,7 +2935,7 @@ function syncPriceBar(){
   var stops = bar.children;
   for(var i=0;i<stops.length;i++){
     (function(btn, idx){
-      btn.addEventListener('click', function(){ state.priceMax=priceStopValue(btn); render(); });
+      btn.addEventListener('click', function(){ var v=priceStopValue(btn); state.priceMax = (v !== null && v === state.priceMax) ? null : v; render(); });
       btn.addEventListener('keydown', function(e){
         var next = -1;
         if(e.key === 'ArrowRight' || e.key === 'ArrowDown') next = (idx + 1) % stops.length;
