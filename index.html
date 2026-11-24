@@ -993,6 +993,7 @@ body[data-view="about"] .view-switch{display:none!important}
     font-size:13px;padding:9px 14px;white-space:normal;text-align:center;line-height:1.35;
   }
   .place-popup .leaflet-popup-content{margin:14px 16px}
+  .place-popup .pp-offer{display:none}
   footer{margin:32px 0 24px;padding:30px 22px 28px}
   #view-about{padding:20px 0 40px}
   .notebook{padding:58px 20px 44px 54px}
@@ -2330,6 +2331,7 @@ function openHoverPopup(i){
     closeButton:true, autoPan:true, offset:[0,-28], className:'place-popup',
     minWidth: isNarrow ? Math.max(240, window.innerWidth - 24) : 320,
     maxWidth: isNarrow ? Math.max(240, window.innerWidth - 24) : 440,
+    maxHeight: isNarrow ? 300 : 460,
     autoPanPaddingTopLeft: L.point(20,20),
     autoPanPaddingBottomRight: L.point(20, isNarrow ? 96 : 20)
   };
