@@ -1,6 +1,6 @@
 # Community Kitchen Amsterdam
 
-> Eetkaart van Amsterdam: 59 community kitchens, buurtkeukens, restaurants en voedselmarkten waar je gratis of goedkoop lekker en gezond kunt eten, vaak samen met buurtgenoten. Een project van studenten van de Hogeschool van Amsterdam voor De Maatschappij Ben Jij (groep E).
+> Eetkaart van Amsterdam: 62 community kitchens, buurtkeukens, restaurants en voedselmarkten waar je gratis of goedkoop lekker en gezond kunt eten, vaak samen met buurtgenoten. Een project van studenten van de Hogeschool van Amsterdam voor De Maatschappij Ben Jij (groep E).
 
 Website: https://communitykitchenamsterdam.nl
 
@@ -8,7 +8,7 @@ Website: https://communitykitchenamsterdam.nl
 
 Alle plekken staan op een interactieve kaart op de website. Je kunt zoeken op naam, gerecht of adres, filteren op dag, maaltijd (ontbijt, lunch, diner, 3 gangen, koffie & thee, boodschappen), voorkeur (vegan, vegetarisch), prijs en stadsdeel, en de route naar een plek opvragen. Controleer vooraf altijd even de website van de plek zelf voor de actuele openingstijden en reserveren.
 
-## Alle plekken (59)
+## Alle plekken (62)
 
 ### Stadsdeel Centrum (8 plekken)
 
@@ -192,7 +192,7 @@ Alle plekken staan op een interactieve kaart op de website. Je kunt zoeken op na
   Let op: Reserveren niet nodig, iedereen welkom. 20% extra korting met Stadspas of als klant van Helen's Free Food Market.
   Website: https://winwinwinkel.nl
 
-### Stadsdeel Nieuw-West (12 plekken)
+### Stadsdeel Nieuw-West (15 plekken)
 
 - **BuurtBuik - Geuzenveld** — Aalbersestraat 248, 1067 GM Amsterdam — Prijs: Gratis — Wanneer: Zondagen 13:00–13:30
   BuurtBuik Geuzenveld draait om gezellig samen eten en voedsel redden dat anders verloren zou gaan. Buurtbewoners koken met elkaar en iedereen is welkom aan tafel.
@@ -242,6 +242,18 @@ Alle plekken staan op een interactieve kaart op de website. Je kunt zoeken op na
   Bij de Buurtkeuken van Stadsboerderij Osdorp wordt altijd vegetarisch gekookt, met groenten uit de moestuin en geredde groenten die anders verloren waren gegaan. Vers en samen met de buurt.
   Let op: Verplicht reserveren, alleen via de website.
   Website: https://stadsboerderijosdorp.nl/buurtkeuken-osdorp/
+- **Buurtrestaurant van de Wilde Chefs** — Notweg 32, 1068 LL Amsterdam — Prijs: €8 — Wanneer: Elke donderdag 18:00
+  Bij Buurtrestaurant van de Wilde Chefs eet je elke donderdag een heerlijk driegangenmenu, aan de Notweg naast het IKC Talent.
+  Let op: Reserveren via fatih@thebeach.nu of 020-6385908.
+  Website: https://wijzijnnieuwwest.nl/activiteit/86600/buurtrestaurant-van-de-wilde-chefs
+- **Buurtkeuken Slotermeer** — Lodewijk van Deysselstraat 33, 1064 HL Amsterdam — Prijs: Gratis — Wanneer: Di, wo & do 12:00–15:00 (gratis lunch)
+  In de Buurtkeuken van Stichting BuurSaam eet je samen met buurtgenoten en wordt voedsel uitgedeeld dat anders verloren zou gaan. Er wordt zoveel mogelijk vegetarisch gekookt en iedereen die een extra zetje kan gebruiken is welkom, zonder Stadspas of aanmelding.
+  Let op: Tijdens de kerstvakantie gesloten (18 december t/m 3 januari).
+  Website: https://stichtingbuursaam.nl/buurtkeuken/
+- **Weggeefwinkel Buurtkeuken Slotermeer** — Lodewijk van Deysselstraat 33, 1064 HL Amsterdam — Prijs: Gratis — Wanneer: Ma & wo 10:30–11:00
+  Bij de Weggeefwinkel van Buurtkeuken Slotermeer haal je gratis geredde groente, fruit en brood op: goed eten dat anders zou worden weggegooid.
+  Let op: Tijdens de kerstvakantie gesloten (18 december t/m 3 januari).
+  Website: https://stichtingbuursaam.nl/buurtkeuken/
 
 ### Stadsdeel Zuidoost (5 plekken)
 
