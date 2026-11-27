@@ -3706,7 +3706,7 @@ initDeepLink();
     <span class="cb-mark" aria-hidden="true"><svg width="30" height="8" viewBox="0 0 38 10" fill="none"><path d="M1.5 1.5L8.5 8.5M8.5 1.5L1.5 8.5M15.5 1.5L22.5 8.5M22.5 1.5L15.5 8.5M29.5 1.5L36.5 8.5M36.5 1.5L29.5 8.5" stroke="#EC0000" stroke-width="2.2" stroke-linecap="square"/></svg></span>
     <div>
       <h2 id="cb-title">Cookies op deze site</h2>
-      <p id="cb-text">We willen graag Microsoft Clarity gebruiken om te zien hoe bezoekers de kaart gebruiken (heatmaps en sessie-opnames, waarbij tekst automatisch wordt gemaskeerd), zodat we de site kunnen verbeteren. Dat mag alleen met jouw toestemming. Bezoekers tellen we sowieso al privacyvriendelijk en zonder cookies via GoatCounter.</p>
+      <p id="cb-text">Wij willen graag zien hoe bezoekers de kaart gebruiken zodat we de site kunnen verbeteren. Dat mag alleen met jouw toestemming.</p>
     </div>
   </div>
   <div class="cb-actions">
@@ -3720,10 +3720,10 @@ initDeepLink();
   var CLARITY_ID = 'zk7z98bws5';
   var TXT = {
     nl: { title: 'Cookies op deze site',
-          text: 'We willen graag Microsoft Clarity gebruiken om te zien hoe bezoekers de kaart gebruiken (heatmaps en sessie-opnames, waarbij tekst automatisch wordt gemaskeerd), zodat we de site kunnen verbeteren. Dat mag alleen met jouw toestemming. Bezoekers tellen we sowieso al privacyvriendelijk en zonder cookies via GoatCounter.',
+          text: 'Wij willen graag zien hoe bezoekers de kaart gebruiken zodat we de site kunnen verbeteren. Dat mag alleen met jouw toestemming.',
           accept: 'Alles accepteren', decline: 'Alleen noodzakelijk' },
     en: { title: 'Cookies on this site',
-          text: 'We would like to use Microsoft Clarity to see how visitors use the map (heatmaps and session recordings, with text automatically masked), so we can improve the site. That is only allowed with your consent. We already count visitors in a privacy-friendly way without cookies via GoatCounter.',
+          text: 'We would like to see how visitors use the map so that we can improve the site. That is only allowed with your consent.',
           accept: 'Accept all', decline: 'Essential only' }
   };
   function loadClarity(){
@@ -3738,15 +3738,21 @@ initDeepLink();
   try { choice = localStorage.getItem(CONSENT_KEY); } catch(e) {}
   if (choice === 'all') { loadClarity(); return; }
   if (choice === 'essential') { return; }
+  var banner = document.getElementById('cookie-banner');
+  function render(lang){
+    var t = TXT[lang] || TXT.nl;
+    document.getElementById('cb-title').textContent = t.title;
+    document.getElementById('cb-text').textContent = t.text;
+    document.getElementById('cb-accept').textContent = t.accept;
+    document.getElementById('cb-decline').textContent = t.decline;
+  }
   var lang = 'nl';
   try { lang = localStorage.getItem('cka_lang') || 'nl'; } catch(e) {}
-  var t = TXT[lang] || TXT.nl;
-  var banner = document.getElementById('cookie-banner');
-  document.getElementById('cb-title').textContent = t.title;
-  document.getElementById('cb-text').textContent = t.text;
-  document.getElementById('cb-accept').textContent = t.accept;
-  document.getElementById('cb-decline').textContent = t.decline;
+  render(lang);
   banner.classList.add('show');
+  var nlBtn = document.getElementById('lang-nl'), enBtn = document.getElementById('lang-en');
+  if (nlBtn) nlBtn.addEventListener('click', function(){ render('nl'); });
+  if (enBtn) enBtn.addEventListener('click', function(){ render('en'); });
   document.getElementById('cb-accept').addEventListener('click', function(){
     try { localStorage.setItem(CONSENT_KEY, 'all'); } catch(e) {}
     banner.classList.remove('show'); loadClarity();
